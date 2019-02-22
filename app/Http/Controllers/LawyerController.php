@@ -51,7 +51,7 @@ class LawyerController extends Controller
 
 
         ]);
-        $lawyer =new $lawyer([
+       /* $lawyer =new $lawyer([
             'email'=>$request->get('email'),
             'password'=>$request->get('password'),
             'confirm_password'=>$request->get('confirm_password'),
@@ -64,10 +64,13 @@ class LawyerController extends Controller
             'licence_number'=>$request->get('licence_number'),
             'adress'=>$request->get('adress')
 
-        ]);
+        ]);*/
 
-        $lawyer->save();
-        return redirect()->route('lawyer.create')->with('success','Data Added');
+        Lawyer::create($request->all());
+       /* return redirect()->route('caserecord.index')
+                        ->with('success', 'New Case Record created successfully');
+        $lawyer->save();*/
+        return redirect()->route('welcome')->with('success','Data Added');
     }
 
     /**

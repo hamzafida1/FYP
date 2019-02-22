@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Edit Case Record</title>
   <style type="text/css">
     body{
     margin-top: 30px;
@@ -164,50 +164,38 @@ input[type=number]{
     <div class="Maincontainer">
 
             <div class="personal_information" >
-                <h2>Registration</h2>
+                <h2>Update Case Details</h2>
                 <br><br><br>
 
                 <div class="pinfo" >
                   
-                    <form action="{{route('lawyer.store')}}" method="post">
+                    <form action="{{route('caserecord.update' ,$caserecord->id)}}" method="post">
                          @csrf
-                        <label ><b>First Name</b></label><br>
-                        <input type="text" id="adress" name="first_name" style="width:70%"><br>
-                          <label ><b>Last Name</b></label><br>
-                        <input type="text" id="adress" name="last_name" style="width:70%"><br>
-                        <label for="adress"><b>Password</b></label><br>
-                        <input type="password" id="adress" name="password" style="width:70%"><br>
-                        <label for="adress"><b>Confirm Password</b></label><br>
-                        <input type="password" id="adress" name="confirm_password" style="width:70%"><br>
-                        <label ><b>Address</b></label><br>
-                        <input type="text" id="adress" name="adress" style="width:70%"><br>
-                        <label ><b>Client Phone</b></label><br>
-                        <select id="pNo" name="PhoneNo" style="width:10%">
+                         @method('PUT')
+                        <label for="adress"><b>Case Title</b></label><br>
+                        <input type="text" id="adress" name="case_title" style="width:70%" value="{{$caserecord->case_title}}"><br>
+                          <label for="adress"><b>Case Description</b></label><br>
+                        <input type="text" id="adress" name="case_description" style="width:70%" value="{{$caserecord->case_description}}"><br>
+                        <label for="adress"><b>Client Name</b></label><br>
+                        <input type="text" id="adress" name="client_name" style="width:70%" value="{{$caserecord->client_name}}"><br>
+                        <label for="adress"><b>Client Phone</b></label><br>
+                        <select id="pNo" name="PhoneNo" style="width:10%" >
                           <option value="Pakistan">+92</option>
                           <option value="canada">+61</option>
                           <option value="usa">+14</option>
                           <option value="usa">+21</option>
                         </select>
-                        <input type="number" id="adress" name="phone" style="width:60%"><br>
-                        <label for="adress"><b>E Mail</b></label><br>
-                        <input type="text" id="adress" name="email" style="width:70%"><br>
-                        <label for="adress"><b>Licence Number</b></label><br>
-                        <input type="text" id="adress" name="licence_number" style="width:70%"><br>
-                        <label for="adress"><b>Category</b></label><br>
-                        <select id="pNo" name="category" style="width:20%">
-                          <option value="Business">Business</option>
-                          <option value="Family">Family</option>
-                          <option value="Criminal">Criminal</option>
-                          <option value="Social">Social</option>
-                        </select><br>
-                        <label for="adress"><b>Experience</b></label><br>
-                        <input type="number" id="adress" name="experience" style="width:70%"><br>
-                        <label for="adress"><b>Law Firm Name</b></label><br>
-                        <input type="text" id="adress" name="lawfirm_name" style="width:70%"><br>
-                        <br><br><br>
+                        <input type="number" id="adress" name="client_phone" style="width:60%" value="{{$caserecord->client_phone}}"><br>
+                        <label for="adress"><b>Opponent Name</b></label><br>
+                        <input type="text" id="adress" name="opponent_name" style="width:70%" value="{{$caserecord->opponent_name}}"><br>
+                        <label for="adress"><b>Court Name</b></label><br>
+                        <input type="text" id="adress" name="court_name" style="width:70%" value="{{$caserecord->court_name}}"><br>
+                        <label for="adress"><b>Status</b></label><br>
+                        <input type="text" id="adress" name="status" style="width:70%" value="{{$caserecord->status}}"><br><br><br>
 
+                       <a href="{{route('caserecord.index')}}" class="reviewBtn">Back</a>
 
-                            <button type="submit" class="asClientBtn" >Create Account</button>
+                            <button type="submit" class="asClientBtn" >Submit</button>
 
                         </form>
 

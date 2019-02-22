@@ -82,8 +82,8 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/" class="page-scroll"  >Why Easy Law</a></li>
-                <li><a href="/signup" class="page-scroll">Sign up</a></li>
-                <li><a href="#" onclick="document.getElementById('modal-wrapper').style.display='block'" class="page-scroll">Login</a></li>
+                <li><a href="/register" class="page-scroll">Sign up</a></li>
+                <li><a href="/login" class="page-scroll">Login</a></li>
                 <li><button style="margin-left:20px" type="button" class="btn navbar-btn btn-success"  >Post Your Case</button></li>
 
             </ul>

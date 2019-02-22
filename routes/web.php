@@ -17,7 +17,21 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+Route::get('/casedetails', function () {
+    return view('casedetails');
+});
+Route::get('/insertcasedetails', function () {
+    return view('insertcasedetails');
+});
 Route::get('/signup','SignupController@signup');
+Route::get('/practice',function(){
+	return view('practice');
+});
 Route::get('/welcome','SignupController@store');
 Route::resource('lawyer', 'LawyerController');
+Route::resource('caserecord', 'CaserecordController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
