@@ -1,0 +1,128 @@
+body {
+    background-color: #f7f7f7;
+}
+
+.card-profile {
+    background-color: #ffffff;
+    float: left;
+    height: 100%;
+    width: 400px;
+    margin: 35px;
+}
+
+.card-profile .card-img-profile {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-top: 50px;
+    height: 100px;
+    margin-bottom: 5px;
+    border: 3px solid #1dbf73;
+}
+
+.card-title {
+    margin-bottom: 0px;
+    color: black;
+}
+
+
+.card-profile .card-title small {
+    display: block;
+    font-size: .6em;
+    margin-top: .2em;
+}
+
+.card-profile .card-links {
+    margin-bottom: 5px;
+}
+
+
+
+
+svg {
+    position: relative;
+    width: 100%;
+    align-items: center;
+
+    top: 0px;
+}
+
+.shape {
+    fill-opacity: 0.75;
+    stroke: #1dbf73;
+    stroke-width: 2;
+}
+
+.shape:hover {
+    fill-opacity: 1;
+    stroke: #1dbf73;
+    stroke-dasharray: 10;
+    stroke-width: 3;
+}
+
+text {
+    fill: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+.dashboard_title {
+    color: black;
+}
+
+.dashboard_title:hover {
+
+    text-decoration: none;
+    color: #000000;
+}
+
+hr {
+    width: 90%;
+}
+
+.upgrade {
+
+    margin-top: 50px;
+    width: 100%;
+    padding: 0px;
+    float: left;
+    border: 1px solid #cecbcb;
+    border-radius: 5px;
+    margin-left: 0px;
+
+}
+
+.view_all {
+    color: #1dbf73;
+}
+
+.view_all:hover {
+    color: #1dbf73;
+    text-decoration: none;
+}
+
+.cardDashboard {
+    padding: 30px 0px 0px 30px;
+    background-color: #ffffff;
+    transition: 0.3s;
+    height: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 40px;
+}
+
+.img1 {
+    margin: 35px 20px 0px 35px;
+}
+
+
+.btn {
+
+    background-color: #1dbf73;
+}
+
+button:hover {
+    background-color: #1dbf73;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+}

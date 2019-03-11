@@ -17,7 +17,18 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    </link>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    
 </head>
 <body>
     <div id="app">
@@ -72,9 +83,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
             @yield('content')
-        </main>
+        
+
+        
+        <script >
+            @yield('pageScript')
+        </script>
+        
     </div>
+
 </body>
 </html>

@@ -192,7 +192,7 @@ input[type=number]{
                         <label for="adress"><b>Status</b></label><br>
                         <input type="text" id="adress" name="status" style="width:70%"><br><br><br>
 
-                       <a href="{{route('caserecord.index')}}" class="reviewBtn">Back</a>
+                       <a href="{{route('caserecord.index')}}" class="reviewBtn" style="text-decoration: none;">Back</a>
 
                             <button type="submit" class="asClientBtn" >Submit</button>
 

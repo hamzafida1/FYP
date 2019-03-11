@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/dashboard', 'LawyerDashboard@index')->middleware('authenticated');
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -29,9 +30,11 @@ Route::get('/practice',function(){
 });
 Route::get('/welcome','SignupController@store');
 Route::resource('lawyer', 'LawyerController');
-Route::resource('caserecord', 'CaserecordController');
+Route::resource('caserecord', 'CaserecordController')->middleware('authenticated');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('events', 'EventsController@index')->name('events.index')->middleware('authenticated');
+Route::post('events', 'EventsController@addEvent')->name('events.add');
