@@ -30,6 +30,7 @@ Route::get('/practice',function(){
 });
 Route::get('/welcome','SignupController@store');
 Route::resource('lawyer', 'LawyerController');
+
 Route::resource('caserecord', 'CaserecordController')->middleware('authenticated');
 
 

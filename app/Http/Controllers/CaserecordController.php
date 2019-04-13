@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Caserecord;
+use App\status;
+use App\User;
+use Auth;
 
 class CaserecordController extends Controller
 {
@@ -12,9 +15,12 @@ class CaserecordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $user)
     {
-        $caserecords = Caserecord::latest()->paginate(5);
+        $caserecords = Caserecord::where('user_id',Auth::user()->id)->where('value', 1)->paginate(5);
+       // Caserecord $caserecords1=$caser->casesrecord()->where('value', 1)->get();
+       // $caserecords = $caserecords1->paginate(5);
+        
         return view('caserecord.index', compact('caserecords'))
                   ->with('i', (request()->input('page',1) -1)*5);
     }
@@ -26,7 +32,8 @@ class CaserecordController extends Controller
      */
     public function create()
     {
-        return view('caserecord.create');
+          $statuses = status::all();
+      return view ('caserecord.create', compact('statuses'));
     }
 
     /**
@@ -48,7 +55,18 @@ class CaserecordController extends Controller
           'status' => 'required',
           
         ]);
-        Caserecord::create($request->all());
+        // $request->user_id=Auth::user()->id;
+        Caserecord::create([
+          'user_id'=>Auth::user()->id,
+          'case_title' => $request->get('case_title'),
+      'case_description' => $request->get('case_description'),
+      'client_name' => $request->get('client_name'),
+      'client_phone' => $request->get('client_phone'),
+      'opponent_name' => $request->get('opponent_name'),
+      'court_name' => $request->get('court_name'),
+    'status' => $request->get('status'),
+    'value'=>1
+                          ]);
         return redirect()->route('caserecord.index')
                         ->with('success', 'New Case Record created successfully');
     }
@@ -73,7 +91,8 @@ class CaserecordController extends Controller
     public function edit($id)
     {
         $caserecord = Caserecord::find($id);
-        return view('caserecord.edit', compact('caserecord'));
+        $statuses = status::all();
+        return view('caserecord.edit', compact('caserecord','statuses'));
     }
 
     /**
@@ -118,7 +137,9 @@ class CaserecordController extends Controller
     public function destroy($id)
     {
         $caserecord = Caserecord::find($id);
-        $caserecord->delete();
+        $caserecord->value = 0;
+      $caserecord->save();
+        
         return redirect()->route('caserecord.index')
                         ->with('success', 'Record deleted successfully');
     }

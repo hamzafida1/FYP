@@ -173,11 +173,14 @@ input[type=number]{
                          @csrf
                          @method('PUT')
                         <label for="adress"><b>Case Title</b></label><br>
-                        <input type="text" id="adress" name="case_title" style="width:70%" value="{{$caserecord->case_title}}"><br>
+                        <input type="text" name="case_title" style="width:70%" value="{{$caserecord->case_title}}"><br>
                           <label for="adress"><b>Case Description</b></label><br>
-                        <input type="text" id="adress" name="case_description" style="width:70%" value="{{$caserecord->case_description}}"><br>
+                        <textarea class="green-border-focus" rows="8" type="text" name="case_description" style="width:70%" >
+                            {{$caserecord->case_description}}
+                        </textarea><br>
+
                         <label for="adress"><b>Client Name</b></label><br>
-                        <input type="text" id="adress" name="client_name" style="width:70%" value="{{$caserecord->client_name}}"><br>
+                        <input type="text"  name="client_name" style="width:70%" value="{{$caserecord->client_name}}"><br>
                         <label for="adress"><b>Client Phone</b></label><br>
                         <select id="pNo" name="PhoneNo" style="width:10%" >
                           <option value="Pakistan">+92</option>
@@ -190,8 +193,13 @@ input[type=number]{
                         <input type="text" id="adress" name="opponent_name" style="width:70%" value="{{$caserecord->opponent_name}}"><br>
                         <label for="adress"><b>Court Name</b></label><br>
                         <input type="text" id="adress" name="court_name" style="width:70%" value="{{$caserecord->court_name}}"><br>
+                        
                         <label for="adress"><b>Status</b></label><br>
-                        <input type="text" id="adress" name="status" style="width:70%" value="{{$caserecord->status}}"><br><br><br>
+                        <select  name="status" style="width:70%">
+                          @foreach($statuses as $status)
+                          <option value="{{ $status->status }}" >{{ $status->status }}</option>
+                          @endforeach
+                        </select><br><br><br>
 
                        <a href="{{route('caserecord.index')}}" class="reviewBtn"
                        style="text-decoration: none;">Back</a>

@@ -11,7 +11,8 @@
     <link rel="stylesheet" href={{asset("css\Dashboardstyle.css")}}>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <link href="css\color_box.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +81,7 @@
         <div class="row">
             <div style="padding: 0px;" class="col-3">
                 <b>
-                    <p style="margin-top:35px;">Upgrade Your Services</p>
+                    <p style="margin-top:35px;">Lawyer Dashboard</p>
                 </b>
             </div>
             <div style="float: left; padding: 0px;" class="col-9">
@@ -88,27 +89,63 @@
             </div>
             <div style="padding: 0px;" class="col-12">
                 <div class="cardDashboard">
-                    <div class="row">
-                        <div style="padding: 0px;" class="col-2">
-                            <img class="img-fluid"
-                                src="https://npm-assets.fiverrcdn.com/assets/@fiverr/seller_dashboard_perseus/10.961632c.svg">
-                        </div>
-                        <div style="padding: 0px;color: rgb(70, 70, 70)" class="col-8">
-                            <h2>Learn More, Earn More</h2>
-                            <p style="padding: 0px; margin-top: 15px; color: rgb(128, 125, 125) ">Take courses
-                                specifically created
-                                to
-                                meet
-                                your professional
-                                needs to improve your ranking in the
-                                marketplace, and boost
-                                your sales.</p>
-                            <button style="background-color: #4CAF50;border-color: #4CAF50; " type="button"
-                                class="btn btn-primary">Enroll
-                                Now</button>
-                        </div>
-                    </div>
+                    <div class="container bootstrap snippet">
+    <div class="row margin-bottom-10">
+        <div class="col-sm-6">
+            <div class="servive-block servive-block-red">
+                <i class="icon-2x color-light fa fa-bell-o"></i>
+                <h3 class="heading-md">Total Cases</h3>
+                <h3>10</h3>                        
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="servive-block servive-block-yellow">
+                <i class="icon-2x color-light fa fa-envelope"></i>
+                <h3 class="heading-md">Total Clients</h3>
+                <h3>25</h3>
+            </div>
+        </div>
+        
+    </div>
+    
+    <br>
+    <div class="row margin-bottom-10">
+        <div class="col-sm-6" >
+            <a href="/caserecord" style="text-decoration: none;">
+            <div class="servive-block servive-block-green">
+                <i class="icon-2x color-light fa fa-globe"></i>
+                <h3 class="heading-md" >View Cases</h3>
+                <p></p>
+            </div>
+            </a>
+        </div>
+
+        <div class=" col-sm-6">
+            <a href="/events" style="text-decoration: none;">
+            <div class="servive-block servive-block-orange">            
+                <i class="icon-2x color-light fa fa-book"></i>
+                <h3 class="heading-md">Case Schedule</h3>
+                <p></p>
+            </div>
+        </a>
+        </div>
+    </div>
+    <br>
+    <div class="row margin-bottom-10">
+        <div class="col-lg-12" >
+            <a href="/caserecord/create" style="text-decoration: none;">
+            <div class="servive-block servive-block-brown">
+                <i class="icon-2x color-light fa fa-globe"></i>
+                <h3 class="heading-md" >Enter Case Details</h3>
+                <p></p>
+            </div>
+            </a>
+        </div>
+
+    </div>
+</div>
                 </div>
+
             </div>
         </div>
     </div>

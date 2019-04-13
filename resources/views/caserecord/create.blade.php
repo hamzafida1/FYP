@@ -173,16 +173,16 @@ input[type=number]{
                          @csrf
                         <label for="adress"><b>Case Title</b></label><br>
                         <input type="text" id="adress" name="case_title" style="width:70%"><br>
-                          <label for="adress"><b>Case Description</b></label><br>
-                        <input type="text" id="adress" name="case_description" style="width:70%"><br>
+                          <label for="adress"><b>Case Description</b></label><br><br>
+                        <textarea rows="8" type="text" id="adress" name="case_description" style="width:70%">
+                            
+                        </textarea><br>
                         <label for="adress"><b>Client Name</b></label><br>
                         <input type="text" id="adress" name="client_name" style="width:70%"><br>
                         <label for="adress"><b>Client Phone</b></label><br>
                         <select id="pNo" name="PhoneNo" style="width:10%">
                           <option value="Pakistan">+92</option>
-                          <option value="canada">+61</option>
-                          <option value="usa">+14</option>
-                          <option value="usa">+21</option>
+                          
                         </select>
                         <input type="number" id="adress" name="client_phone" style="width:60%"><br>
                         <label for="adress"><b>Opponent Name</b></label><br>
@@ -190,7 +190,12 @@ input[type=number]{
                         <label for="adress"><b>Court Name</b></label><br>
                         <input type="text" id="adress" name="court_name" style="width:70%"><br>
                         <label for="adress"><b>Status</b></label><br>
-                        <input type="text" id="adress" name="status" style="width:70%"><br><br><br>
+                        <select  name="status" style="width:70%">
+                          @foreach($statuses as $status)
+                          <option value="{{ $status->status }}" >{{ $status->status }}</option>
+                          @endforeach
+                        </select><br>
+                        <br><br><br>
 
                        <a href="{{route('caserecord.index')}}" class="reviewBtn" style="text-decoration: none;">Back</a>
 
